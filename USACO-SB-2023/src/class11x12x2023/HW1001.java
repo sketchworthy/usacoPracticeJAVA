@@ -5,7 +5,8 @@ package class11x12x2023;
  * going from height a to b where a<b requires a ladder length of
  * at least b-a.
  * 
- * idea:
+ * idea: notice since we're looking for ladder height, this is an inverse
+ * binary search problem.
  * you can perform dfs to find all possible paths from
  * top left corner to bottom right corner by just keeping a visited arr
  * 
