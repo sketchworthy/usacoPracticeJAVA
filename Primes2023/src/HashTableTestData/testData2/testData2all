@@ -1,0 +1,15 @@
+6
+103/950 53/475 8/95 93/950 109/950 36/475 49/475 113/950 44/475 44/475 
+99/950 47/475 107/950 51/475 52/475 89/950 87/950 69/950 99/950 2/19 
+83/950 47/475 97/950 79/950 49/475 11/95 89/950 103/950 53/475 91/950 
+101/950 41/475 99/950 0.1 91/950 93/950 103/950 89/950 21/190 46/475 
+77/950 46/475 91/950 113/950 2/19 97/950 44/475 83/950 53/475 103/950 
+101/950 54/475 53/475 48/475 91/950 81/950 47/475 8/95 52/475 88/950
+
+No example number generations, because this distribution is wrong.
+
+I changed the last fraction in the last row from 89/950 to 88/950 in order to
+make the distribution invalid on purpose.
+
+When I input the distribution to HashTable.java, the program should throw
+an exception saying there was an error on the 6th line.

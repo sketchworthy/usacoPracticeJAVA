@@ -1,0 +1,50 @@
+Alabama 	$37,261
+Alaska 	$63,971
+Arizona 	$38,590
+Arkansas 	$36,368
+California 	$58,619
+Colorado 	$52,795
+Connecticut 	$64,511
+Delaware 	$63,664
+Florida 	$39,543
+Georgia 	$44,723
+Hawaii 	$51,277
+Idaho 	$35,466
+Illinois 	$54,091
+Indiana 	$45,317
+Iowa 	$50,315
+Kansas 	$46,982
+Kentucky 	$38,985
+Louisiana 	$43,917
+Maine 	$38,921
+Maryland 	$55,404
+Massachusetts 	$65,545
+Michigan 	$43,372
+Minnesota 	$53,704
+Mississippi 	$31,881
+Missouri 	$43,317
+Montana 	$39,356
+Nebraska 	$53,114
+Nevada 	$43,820
+New Hampshire 	$51,794
+New Jersey 	$57,084
+New Mexico 	$41,348
+New York 	$64,579
+North Carolina 	$44,325
+North Dakota 	$62,837
+Ohio 	$47,567
+Oklahoma 	$44,623
+Oregon 	$50,582
+Pennsylvania 	$50,997
+Rhode Island 	$47,639
+South Carolina 	$37,063
+South Dakota 	$48,076
+Tennessee 	$43,267
+Texas 	$53,795
+Utah 	$44,636
+Vermont 	$43,946
+Virginia 	$51,736
+Washington 	$56,831
+West Virginia 	$36,315
+Wisconsin 	$47,266
+Wyoming 	$58,821
