@@ -1,5 +1,6 @@
-/* USACO 2023 Dec Silver _status{COMPLETE or not}_
+/* USACO 2023 Dec Silver Q1 _status{COMPLETE or not}_
  * http://usaco.org/index.php?page=viewproblem&cpid=1338
+ * My personal official post-contest solution
  * 
  * Given nodes with N diff weights, a balanced tower
  * is a list of nodes where every node is at least K 
