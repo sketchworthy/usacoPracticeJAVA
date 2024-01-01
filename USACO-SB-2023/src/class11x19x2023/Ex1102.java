@@ -1,5 +1,5 @@
 package class11x19x2023;
-/* Haybale Harvest status{COMPLETE or not}_
+/* Haybale Harvest COMPLETE SEE Ex1102v2
  * Given N nodes w unique weights and their locations on the number line,
  * find the max weight u can have if you can only move K steps from a
  * start location A
@@ -17,7 +17,9 @@ package class11x19x2023;
  * later it was bc th binary search, my mid = (low+high)/2 should
  * have been (low+high+1)/2. ez fix. ez find bug by just inputting
  * tiny sample test case.
- * even after that there were still bugs tho.
+ * even after that there were still bugs tho. i ended up just
+ * rewriting the whole program which worked! yay for clarity!
+ * (its in Ex1102v2)
  * 
  */
 import java.util.*;
