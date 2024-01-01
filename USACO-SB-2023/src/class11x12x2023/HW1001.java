@@ -1,5 +1,5 @@
 package class11x12x2023;
-/* Millionaire Madness _status{COMPLETE or not}_
+/* Millionaire Madness COMPLETE, REVIEW & SUBMIT ON CANVAS
  * Given a grid of heights, find the shortest ladder len necessary to
  * somehow make it from the NW corner to the SE corner provided
  * going from height a to b where a<b requires a ladder length of
