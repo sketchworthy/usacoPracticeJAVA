@@ -1,11 +1,6 @@
 package class11x19x2023;
 /* Water and Jug _status{COMPLETE or not}_
- * 
- * _problem desc_
- * 
- * idea:
- * 
- * difficulty:
+ * DONE IN CPP
  * 
  */
 import java.util.*;

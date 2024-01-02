@@ -1,4 +1,6 @@
 /* USACO 2023 Dec Silver _status{COMPLETE or not}_
+ * http://usaco.org/index.php?page=viewproblem2&cpid=1351
+ * 
  * Given N nodes and K edges, Anna assesses that
  * K nodes form a cycle. Bess independently assesses
  * that K more nodes form a cycle.
