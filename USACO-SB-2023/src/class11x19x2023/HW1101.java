@@ -22,6 +22,7 @@ import java.io.*;
 
 public class HW1101 {
 	public static void main(String[] args) throws Exception {
+//		BufferedReader in = new BufferedReader(new FileReader("10.in"));
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(in.readLine());
