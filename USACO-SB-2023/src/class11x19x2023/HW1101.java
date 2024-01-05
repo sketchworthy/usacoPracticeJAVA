@@ -22,8 +22,8 @@ import java.io.*;
 
 public class HW1101 {
 	public static void main(String[] args) throws Exception {
-//		BufferedReader in = new BufferedReader(new FileReader("10.in"));
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader in = new BufferedReader(new FileReader("03.in"));
+//		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(in.readLine());
 		int n = Integer.parseInt(st.nextToken());
@@ -47,6 +47,7 @@ public class HW1101 {
 		// indicesOfPs[x] gives most recent index of ps[] that equalled x
 		
 		// iterate thru ps once, updating hashmap and ans
+		indicesOfPs.put(0,-1);
 		for(int j=0;j<n;j++) {
 			indicesOfPs.put(ps[j], j);
 			if(indicesOfPs.containsKey((ps[j]-m)%p)) {
@@ -54,7 +55,7 @@ public class HW1101 {
 			}
 		}
 		
-		if(ans==Integer.MAX_VALUE)out.print(-1);
+		if(ans==Integer.MAX_VALUE || ans==n)out.print(-1);
 		else out.print(ans);
 		
 		in.close();
