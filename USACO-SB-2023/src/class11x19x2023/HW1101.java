@@ -15,20 +15,22 @@ package class11x19x2023;
  * j-(index by hash map adjusted with +1 mb)
  * 
  * difficulty: ez. straightforward ps. some debug trouble as usual tho.
- * 
+ * this time it was because i didn't ensure the mod was always positive
+ * for every time i used mod, and it screwed me over on the 
+ * ((ps[j]-m)%p+p)%p) [formerly (ps[j]-m)%p] lines.
  */
 import java.util.*;
 import java.io.*;
 
 public class HW1101 {
 	public static void main(String[] args) throws Exception {
-//		BufferedReader in = new BufferedReader(new FileReader("03.in"));
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader in = new BufferedReader(new FileReader("10.in"));
+//		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(in.readLine());
-		int n = Integer.parseInt(st.nextToken());
-		long p = Long.parseLong(st.nextToken());
-		long[] A = new long[n]; // mod p
+		int n = Integer.parseInt(st.nextToken()); // # of ints in arr
+		long p = Long.parseLong(st.nextToken()); // target divisor
+		long[] A = new long[n]; // array is mod p
 		st = new StringTokenizer(in.readLine());
 		for(int j=0;j<n;j++) {
 			A[j]=Long.parseLong(st.nextToken())%p;
@@ -41,21 +43,21 @@ public class HW1101 {
 			ps[j]=(ps[j-1]+A[j])%p; // mod p
 		}
 
-		long ans = Long.MAX_VALUE;
+		long ans = n;
 		long m = ps[n-1]; // mod p of total sum of array
 		HashMap<Long,Integer> indicesOfPs = new HashMap<>();
 		// indicesOfPs[x] gives most recent index of ps[] that equalled x
+		indicesOfPs.put((long)0,-1);
 		
 		// iterate thru ps once, updating hashmap and ans
-		indicesOfPs.put((long)0,-1);
 		for(int j=0;j<n;j++) {
-			indicesOfPs.put(ps[j], j);
-			if(indicesOfPs.containsKey((ps[j]-m)%p)) {
-				ans = Math.min(ans, j-indicesOfPs.get((ps[j]-m)%p));
+			if(indicesOfPs.containsKey(((ps[j]-m)%p+p)%p)) { // making sure mod isn't neg
+				ans = Math.min(ans, j-indicesOfPs.get(((ps[j]-m)%p+p)%p));
 			}
+			indicesOfPs.put(ps[j], j);
 		}
 		
-		if(ans==Long.MAX_VALUE || ans==n)out.print(-1);
+		if(ans==n)out.print(-1);
 		else out.print(ans);
 		
 		in.close();
