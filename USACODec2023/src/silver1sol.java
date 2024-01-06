@@ -43,7 +43,10 @@
  * no cows left to place. then we just take our cnt variable we've been
  * keeping a running tally of and we're done!
  * 
- * difficulty: 
+ * difficulty: i think it was actually okay once i planned everything
+ * out first. even the debugging wasn't so overwhelming with small
+ * test cases and debugger abuse. shows importance of planning first,
+ * then coding!
  * 
  */
 import java.util.*;
@@ -104,8 +107,12 @@ public class silver1sol {
 			Tower t = towerTops.getFirst();
 			// binary search index of lowest cow weight 
 			// that can go on tower at front of queue
+			
+			if(weightFreqs[n-1][0]<k+t.weight)break; 
+			// failsafe: if even highest weight not enough
+			
 			int low = currLow;
-			int high = m-1;
+			int high = n-1;
 			while(low<high) {
 				int mid = (low+high)/2;
 				if(weightFreqs[mid][0]<k+t.weight) {
@@ -132,6 +139,7 @@ public class silver1sol {
 				cnt+=weightFreqs[currLow][1];
 				currLow++;
 				towerTops.add(t2);
+				towerTops.getFirst().freq-=t2.freq;
 			}
 		}
 
