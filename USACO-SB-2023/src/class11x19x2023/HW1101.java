@@ -1,5 +1,5 @@
 package class11x19x2023;
-/* Sum divisible by P COMPLETE, TO REVIEW & SUBMIT TO CANVAS
+/* Sum divisible by P COMPLETE
  * Given an array A of pos longs, remove shortest contiguous subarr such that 
  * remaining total sum is 0 mod p. Report the length of the subarr u remove.
  * If you must remove the whole arr, return -1
