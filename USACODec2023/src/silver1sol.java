@@ -82,7 +82,6 @@ public class silver1sol {
 				Tower t = new Tower(weightFreqs[currLow][0],
 										weightFreqs[currLow][1]);
 				numOfTowers+=weightFreqs[currLow][1];
-				weightFreqs[currLow][1]=0;
 				currLow++;
 				towerTops.add(t);
 			}
@@ -111,18 +110,25 @@ public class silver1sol {
 			if(weightFreqs[n-1][0]<k+t.weight)break; 
 			// failsafe: if even highest weight not enough
 			
-			int low = currLow;
-			int high = n-1;
-			while(low<high) {
-				int mid = (low+high)/2;
-				if(weightFreqs[mid][0]<k+t.weight) {
-					low = mid+1;
+			if(weightFreqs[currLow][0]<k+t.weight) {
+				if(currLow<n-1 && weightFreqs[currLow+1][0]>=k+t.weight) {
+					currLow++;
 				}
 				else {
-					high=mid;
+					int low = currLow;
+					int high = n-1;
+					while(low<high) {
+						int mid = (low+high)/2;
+						if(weightFreqs[mid][0]<k+t.weight) {
+							low = mid+1;
+						}
+						else {
+							high=mid;
+						}
+					}
+					currLow=low;
 				}
 			}
-			currLow=low;
 			
 			// add on the cow weight to the tower
 			if(weightFreqs[currLow][1] >= t.freq) {

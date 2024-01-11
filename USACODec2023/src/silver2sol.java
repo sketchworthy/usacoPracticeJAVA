@@ -36,6 +36,7 @@ public class silver2sol {
 		int n = Integer.parseInt(st.nextToken()); // # of barns/nodes
 		int k = Integer.parseInt(st.nextToken()); // # of barns in cycle
 		
+		
 		out.println(n);
 		
 		in.close();

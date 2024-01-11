@@ -27,7 +27,7 @@ import java.io.*;
 public class HW1001 {
 	static int m,n;
 	static ArrayList<ArrayList<Integer>> adj; // every node is adj to 4 neighbors
-	// node [x][y] is ID x*m+y, which covers 0 thru m*n-1
+	// node [x][y] is ID x*n+y, which covers 0 thru m*n-1
 	static int[][] grid;
 	static int ladderLen;
 	static boolean[][] visited;
@@ -35,7 +35,8 @@ public class HW1001 {
 	static int[] dr = {1,0,-1,0};
 	static int[] dc = {0,1,0,-1};
 	public static void main(String[] args) throws Exception {
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader in = new BufferedReader(new FileReader("02.in"));
+//		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = new StringTokenizer(in.readLine());
 		m = Integer.parseInt(st.nextToken());
@@ -57,10 +58,10 @@ public class HW1001 {
 		for(int j=0;j<m;j++) {
 			for(int k=0;k<n;k++) { // for node[j][k]
 				tallestCoinHeight = Math.max(tallestCoinHeight, grid[j][k]);
-				int currI = j*m+k;
+				int currI = j*n+k;
 				for(int i=0;i<4;i++) {
 					if(j+dr[i]>=0 && j+dr[i]<m && k+dc[i]>=0 && k+dc[i]<n) {
-						adj.get(currI).add((j+dr[i])*m+k+dc[i]);
+						adj.get(currI).add((j+dr[i])*n+k+dc[i]);
 					}
 				}
 			}
@@ -91,11 +92,11 @@ public class HW1001 {
 	
 	static void dfs(int node) {
 		// find cluster of all visit-able squares with ladderLen 
-		visited[node/m][node%m]=true;
+		visited[node/n][node%n]=true;
 		
 		for(int nbor:adj.get(node)) {
-			if(visited[nbor/m][nbor%m])continue;
-			if(grid[nbor/m][nbor%m]<=ladderLen+grid[node/m][node%m]) {
+			if(visited[nbor/n][nbor%n])continue;
+			if(grid[nbor/n][nbor%n]<=ladderLen+grid[node/n][node%n]) {
 				dfs(nbor);
 			}
 		}
