@@ -1,4 +1,4 @@
-/* USACO 2023 Dec Silver Q2 _status{COMPLETE or not}_
+/* USACO 2023 Dec Silver Q2 COMPLETE
  * http://usaco.org/index.php?page=viewproblem2&cpid=1351
  * My personal official post-contest solution
  * 
