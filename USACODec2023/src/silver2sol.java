@@ -22,7 +22,10 @@
  * 
  * difficulty: the idea was easy to come up with once i was
  * thinking clearly and not under time pressure. need to practice
- * more timed contest stress w coding
+ * more timed contest stress w coding. had some debug trouble,
+ * but that was just bc i wasn't careful and switched up n and k
+ * as bounds to loops, plus i forgot to code in the backwards
+ * case
  * 
  */
 import java.util.*;
@@ -67,13 +70,13 @@ public class silver2sol {
 			B[temp] = j;
 		}
 		
-		for(int j=0;j<k;j++) { // for node
+		for(int j=0;j<n;j++) { // for node
 			if(A[j]==-1 || B[j]==-1) continue;
 			int diff;
-//			diff = (B[j]-A[j]+k)%k; // ensures >0
-//			freq.put(diff,freq.getOrDefault(diff, 0)+1);
+			diff = (B[j]-A[j]+k)%k; // ensures >0
+			freq.put(diff,freq.getOrDefault(diff, 0)+1);
 //
-			diff = ((k-A[j]-B[j])%k+k)%k; // opposite way
+			diff = ((k-A[j]-B[j]-1)%k+k)%k; // opposite way
 			freq2.put(diff,freq2.getOrDefault(diff, 0)+1);
 		}
 		
