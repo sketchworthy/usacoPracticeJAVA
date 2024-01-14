@@ -1,7 +1,5 @@
 package class11x12x2023;
-/* Millionaire Madness DOESN'T WORK, SEE HW1001V2.
- * THIS VERSION USES AN ADJ LIST AND GOES BETWEEN node id x and
- * COORDS grid[x/n][x%n]
+/* Millionaire Madness DOESN'T WORK, BUT NEITHER DOES CLASS SOL LMAO
  * Given a grid of heights, find the shortest ladder len necessary to
  * somehow make it from the NW corner to the SE corner provided
  * going from height a to b where a<b requires a ladder length of
@@ -21,6 +19,8 @@ package class11x12x2023;
  * visits but that didnt rlly work :(
  * instead, inverse binary search ftw! and dfs to detect
  * clusters! i hit stack overflow errors on my dfs tho :(
+ * EDIT: even the class solution hits stack overflow errors
+ * on java OR cpp dfs lmao. nvm, dfs is not the way
  * 
  */
 import java.util.*;
