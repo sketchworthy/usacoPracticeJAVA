@@ -20,16 +20,14 @@ package class11x12x2023;
  * has its own copy of a visited arr so it can track its own
  * visits but that didnt rlly work :(
  * instead, inverse binary search ftw! and dfs to detect
- * clusters! i hit stack overflow errors on my dfs tho :(
+ * clusters! 
  * 
  */
 import java.util.*;
 import java.io.*;
 
-public class HW1001 {
+public class HW1001v2 {
 	static int m,n;
-	static ArrayList<ArrayList<Integer>> adj; // every node is adj to 4 neighbors
-	// node [x][y] is ID x*n+y, which covers 0 thru m*n-1
 	static int[][] grid;
 	static int ladderLen;
 	static boolean[][] visited;
@@ -51,27 +49,8 @@ public class HW1001 {
 			}
 		}
 		
-		// fill adj and find tallest height of coin pile
-		adj = new ArrayList<>();
-		for(int j=0;j<m*n;j++) {
-			adj.add(new ArrayList<>());
-		}
-		int tallestCoinHeight=0;
-		for(int j=0;j<m;j++) {
-			for(int k=0;k<n;k++) { // for node[j][k]
-				tallestCoinHeight = Math.max(tallestCoinHeight, grid[j][k]);
-				int currI = j*n+k;
-				for(int i=0;i<4;i++) {
-					if(j+dr[i]>=0 && j+dr[i]<m && k+dc[i]>=0 && k+dc[i]<n) {
-						adj.get(currI).add((j+dr[i])*n+k+dc[i]);
-					}
-				}
-			}
-		}
-		
 		// inverse binary search for smallest ladder length that will work
 		int low = 0;
-//		int high = tallestCoinHeight;
 		int high=(int)1e9;
 		while(low<high) {
 			ladderLen = (low+high)/2;
@@ -91,19 +70,28 @@ public class HW1001 {
 		out.close();
 	}
 	
-	static boolean dfs(int node) {
+	static boolean dfs(int node) { // change to (j,k) 
 		// find cluster of all visit-able squares with ladderLen 
 		visited[node/n][node%n]=true;
 		if(node==m*n-1)return true;
 		
 		boolean ans=false;
-		for(int nbor:adj.get(node)) {
-			if(visited[nbor/n][nbor%n])continue;
-			if(visited[m-1][n-1])return true;
-			if(grid[nbor/n][nbor%n]<=ladderLen+grid[node/n][node%n]) {
-				ans |= dfs(nbor);
+
+		// visit adjacent nodes
+		// TODO
+		for(int j=0;j<m;j++) {
+			for(int k=0;k<n;k++) { // for node [j][k]
+				tallestCoinHeight = Math.max(tallestCoinHeight, grid[j][k]);
+				int currI = j*n+k;
+				for(int i=0;i<4;i++) {
+					if(j+dr[i]>=0 && j+dr[i]<m && k+dc[i]>=0 && k+dc[i]<n) {
+						adj.get(currI).add((j+dr[i])*n+k+dc[i]);
+					}
+				}
 			}
 		}
+		
+		
 		return ans;
 	}
 }
