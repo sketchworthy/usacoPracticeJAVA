@@ -1,4 +1,5 @@
 /* USACO 2023 Dec Silver _status{COMPLETE or not}_
+ * http://usaco.org/index.php?page=viewproblem2&cpid=1352
  * Given T targets at diff positions, find max targets
  * Bess can hit given a set of instructions. You can change
  * up to 1 command in the str of instructions.
